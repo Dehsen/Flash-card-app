@@ -1,12 +1,193 @@
+/**** varibles ****/
+:root {
+  --main-color: #3B86FF;
+  --theme-font: #000;
+  --theme-background: #F7F7F7;
+  --theme-card-background: #FFFFFF;
+  --grid-width: 114rem;
+  --gutter-vertical: 8rem;
+  --gutter-vertical-small: 6rem;
+  --gutter-horizontal: 6rem
+}
+
+/**** Basic reset****/
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit; }
+  box-sizing: inherit; 
+}
 
 html {
-  font-size: 62.5%; }
+  /****This defines what 1 rem is****/
+  font-size: 62.5%; 
+}
 
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--theme-font);
+  background-color: var(--theme-background);
+}
+
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 1rem
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;
+}
+
+#footer {
+  background-color: var(--main-color);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 6.5rem;
+  font-size: 2.5rem;  
+  text-align: center;
+  color: #fff;
+  padding-top: 1rem;
+}
+
+#footer a, #footer a:link, #footer a:visited {
+  color: #fff;
+}
+
+.row {
+  max-width: var(--grid-width);
+  margin: 0 auto;
+}
+
+h1, .user-guide-modal {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.user-guide-modal, .flash-card-form, .flash-card {
+  box-shadow: 0px 2rem 3rem rgba(0, 0, 0, 0.1);
+}
+.user-guide-modal {
+  position: relative;
+  font-size: 3.1rem;
+  margin-top: 1rem;
+  background-color: var(--theme-card-background);
+  border-radius: 1rem;
+  padding: 3rem 2.8rem;
+  
+}
+
+.modal-close-icon {
+  background: url(../img/close-icon.svg) no-repeat;
+  width: 20px;
+  height: 20px;
+  color: var(--main-color);
+  z-index: 10001;
+
+  display: inline-block;
+  position: absolute;
+  right: 1.5%;
+  top: 6%;
+  /* z-index: 100 !important; */
+}
+
+.btn, .btn:link, .btn:visited {
+  border-radius: .3rem;
+  border: none;
+  font-weight: 400;
+  color: #fff;
+}
+
+
+.btn-small {
+  font-size: 1.18rem;
+  width: 12rem;
+  margin-top: 3rem;
+  padding: 1rem .5rem;
+}
+
+.btn-medium {
+  font-size: 1.5rem;
+  width: 17rem;
+  margin-top: 3rem;
+  padding: 1.5rem 2rem;
+}
+
+.btn-inverse {
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
+  background-color:var(--theme-card-background);
+}
+
+.main-color {
+  background-color: var(--main-color) !important;
+}
+
+.u-margin-top-sm {
+  margin-top: 1rem !important;
+}
+
+
+.flash-card-form {
+  position: relative;
+  font-size: 2rem;
+  max-width: 50vw;
+  background-color: var(--theme-card-background);
+  padding: 4rem 2rem 2rem 2rem;
+  margin-top: 3rem;
+}
+
+.flash-card-form .modal-close-icon {
+  right: 2.5%;
+  top: 4%;
+}
+
+label {
+  display: block;
+}
+
+textarea {
+  font-family: 'Source Sans Pro', sans-serif;
+  width: 100%;
+  height: 5.5rem;
+  border-color: var(--main-color);
+  border-radius: .2rem;
+  font-size: 2rem;
+  padding: 1rem 1rem 0rem 1.5rem;
+}
+
+
+.flash-card {
+  height: 15rem;
+  font-size: 2rem;
+  color: var(--theme-font);
+  width: 100%;
+  background-color: var(--theme-card-background);
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  transition all .8s ease;
+}
+
+.flash-card:hover {
+  transform: rotateY(180deg);
+}
+/* .flash-card-front {
+  background-color: var(--theme-card-background);
+} */
+
+/***** GRID *****/
+.row .col-1-of-2{width:calc((100% - 6rem) / 2)}
+.row .col-1-of-3{width:calc((100% - 2 * 6rem) / 3)}
+.row .col-2-of-3{width:calc(2 * ((100% - 2 * 6rem) / 3) + 6rem)}
+.row .col-1-of-4{width:calc((100% - 3 * 6rem) / 4)}
+.row .col-2-of-4{width:calc(2 * ((100% - 3 * 6rem) / 4) + 6rem)}
+.row .col-3-of-4{width:calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem)}
