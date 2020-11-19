@@ -139,7 +139,6 @@ h1 {
   color: #fff;
 }
 
-
 .btn-small {
   font-size: 1.18rem;
   width: 12rem;
@@ -165,7 +164,9 @@ h1 {
 }
 
 
-
+/***************************************************
+***** FLASH CARD FORM ******************************
+***************************************************/
 .flash-card-form {
   position: relative;
   font-size: 2rem;
@@ -196,26 +197,15 @@ textarea {
 }
 
 
+/***************************************************
+***** FLASH CARD ***********************************
+***************************************************/
 .flash-card {
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
   margin-top: 3rem;
   height: 15rem;
-  /*font-size: 2rem;
-  text-align: center;
-  color: var(--theme-font);
-  width: 100%;
-  background-color: var(--theme-card-background);
-  border: 1px solid var(--main-color);
-  border-radius: 1rem;
-  padding: 1rem;
-  margin-top: 3rem;
-  margin-bottom: 3rem; 
-  transition: all .8s ease;
-  display: flex;
-  justify-content: center; 
-  align-items: center; */
 }
 
 .flash-card-side {
@@ -235,11 +225,6 @@ textarea {
   padding: 1rem;
 }
 
-
-.flash-card:hover {
-  /* transform: rotateY(180deg); */
-}
-
 .flash-card-side-front {
   background-color: var(--theme-card-background);
   border: 1px solid var(--main-color);
@@ -253,40 +238,10 @@ textarea {
 }
 
 .flash-card:hover .flash-card-side-front {
-  /* height: 15rem;
-  font-size: 2rem;
-  text-align: center;
-  color: var(--theme-font);
-  width: 100%;
-  background-color: var(--theme-card-background);
-  border: 1px solid var(--main-color);
-  border-radius: 1rem;
-  padding: 1rem;
-  margin-top: 3rem;
-  margin-bottom: 3rem; 
-  transition: all .8s ease;
-  display: flex;
-  justify-content: center; 
-  align-items: center; */
   transform: rotateY(180deg);
 }
 
 .flash-card:hover .flash-card-side-back {
-  /* height: 15rem;
-  font-size: 2rem;
-  text-align: center;
-  color: var(--theme-font);
-  width: 100%;
-  background-color: var(--theme-card-background);
-  border: 1px solid var(--main-color);
-  border-radius: 1rem;
-  padding: 1rem;
-  margin-top: 3rem;
-  margin-bottom: 3rem; 
-  transition: all .8s ease;
-  display: flex;
-  justify-content: center; 
-  align-items: center; */
   transform: rotateY(0);
 }
 
