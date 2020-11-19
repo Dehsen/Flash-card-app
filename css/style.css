@@ -1,4 +1,6 @@
-/**** varibles ****/
+/*********************
+***** VARIABLES ******
+*********************/
 :root {
   --main-color: #3B86FF;
   --theme-font: #000;
@@ -10,7 +12,9 @@
   --gutter-horizontal: 6rem
 }
 
-/**** Basic reset****/
+/************************************
+****** BASIC WEB PAGE RESET *********
+************************************/
 *,
 *::after,
 *::before {
@@ -19,8 +23,10 @@
   box-sizing: inherit; 
 }
 
+/************************************
+***** THIS DEFINES WHAT 1 REM IS ****
+************************************/
 html {
-  /****This defines what 1 rem is****/
   font-size: 62.5%; 
 }
 
@@ -33,7 +39,9 @@ body {
   background-color: var(--theme-background);
 }
 
-
+/*****************************************
+****** SET FOOTER TO BOTTOM OF PAGE ******
+*****************************************/
 #page-container {
   position: relative;
   min-height: 100vh;
@@ -46,9 +54,6 @@ body {
 
 #footer {
   background-color: var(--main-color);
-  position: absolute;
-  bottom: 0;
-  width: 100%;
   height: 6.5rem;
   font-size: 2.5rem;  
   text-align: center;
@@ -60,10 +65,29 @@ body {
   color: #fff;
 }
 
+
+
+/***************************************************
+***** SET MAIN CONTENT CONTAINER TO 1140 PX ********
+***************************************************/
 .row {
   max-width: var(--grid-width);
   margin: 0 auto;
 }
+
+
+
+/***************************************************
+***** GRID *****************************************
+***************************************************/
+.row .col-1-of-2{width:calc((100% - 6rem) / 2)}
+.row .col-1-of-3{width:calc((100% - 2 * 6rem) / 3)}
+.row .col-2-of-3{width:calc(2 * ((100% - 2 * 6rem) / 3) + 6rem)}
+.row .col-1-of-4{width:calc((100% - 3 * 6rem) / 4)}
+.row .col-2-of-4{width:calc(2 * ((100% - 3 * 6rem) / 4) + 6rem)}
+.row .col-3-of-4{width:calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem)}
+
+
 
 h1, .user-guide-modal {
   font-weight: 700;
@@ -73,9 +97,14 @@ h1 {
   font-size: 3rem;
 }
 
-.user-guide-modal, .flash-card-form, .flash-card {
+
+/***************************************************
+***** USER GUIDE MODAL *****************************
+***************************************************/
+.user-guide-modal, .flash-card-form, .flash-card-side {
   box-shadow: 0px 2rem 3rem rgba(0, 0, 0, 0.1);
 }
+
 .user-guide-modal {
   position: relative;
   font-size: 3.1rem;
@@ -97,9 +126,12 @@ h1 {
   position: absolute;
   right: 1.5%;
   top: 6%;
-  /* z-index: 100 !important; */
 }
 
+
+/***************************************************
+***** BUTTONS **************************************
+***************************************************/
 .btn, .btn:link, .btn:visited {
   border-radius: .3rem;
   border: none;
@@ -128,13 +160,10 @@ h1 {
   background-color:var(--theme-card-background);
 }
 
-.main-color {
+.btn-main-color {
   background-color: var(--main-color) !important;
 }
 
-.u-margin-top-sm {
-  margin-top: 1rem !important;
-}
 
 
 .flash-card-form {
@@ -144,6 +173,7 @@ h1 {
   background-color: var(--theme-card-background);
   padding: 4rem 2rem 2rem 2rem;
   margin-top: 3rem;
+  border-radius: 1rem;
 }
 
 .flash-card-form .modal-close-icon {
@@ -167,27 +197,99 @@ textarea {
 
 
 .flash-card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  margin-top: 3rem;
   height: 15rem;
-  font-size: 2rem;
+  /*font-size: 2rem;
+  text-align: center;
   color: var(--theme-font);
   width: 100%;
   background-color: var(--theme-card-background);
+  border: 1px solid var(--main-color);
+  border-radius: 1rem;
+  padding: 1rem;
   margin-top: 3rem;
-  margin-bottom: 3rem;
-  transition all .8s ease;
+  margin-bottom: 3rem; 
+  transition: all .8s ease;
+  display: flex;
+  justify-content: center; 
+  align-items: center; */
 }
+
+.flash-card-side {
+  height: 15rem;
+  transition: all .8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backface-visibility: hidden;
+  font-size: 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
 
 .flash-card:hover {
+  /* transform: rotateY(180deg); */
+}
+
+.flash-card-side-front {
+  background-color: var(--theme-card-background);
+  border: 1px solid var(--main-color);
+}
+
+.flash-card-side-back {
+  background-color: var(--main-color);
+  transform: rotateY(180deg);
+  color: var(--theme-card-background);
+  border: 1px solid var(--theme-card-background);
+}
+
+.flash-card:hover .flash-card-side-front {
+  /* height: 15rem;
+  font-size: 2rem;
+  text-align: center;
+  color: var(--theme-font);
+  width: 100%;
+  background-color: var(--theme-card-background);
+  border: 1px solid var(--main-color);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem; 
+  transition: all .8s ease;
+  display: flex;
+  justify-content: center; 
+  align-items: center; */
   transform: rotateY(180deg);
 }
-/* .flash-card-front {
-  background-color: var(--theme-card-background);
-} */
 
-/***** GRID *****/
-.row .col-1-of-2{width:calc((100% - 6rem) / 2)}
-.row .col-1-of-3{width:calc((100% - 2 * 6rem) / 3)}
-.row .col-2-of-3{width:calc(2 * ((100% - 2 * 6rem) / 3) + 6rem)}
-.row .col-1-of-4{width:calc((100% - 3 * 6rem) / 4)}
-.row .col-2-of-4{width:calc(2 * ((100% - 3 * 6rem) / 4) + 6rem)}
-.row .col-3-of-4{width:calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem)}
+.flash-card:hover .flash-card-side-back {
+  /* height: 15rem;
+  font-size: 2rem;
+  text-align: center;
+  color: var(--theme-font);
+  width: 100%;
+  background-color: var(--theme-card-background);
+  border: 1px solid var(--main-color);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem; 
+  transition: all .8s ease;
+  display: flex;
+  justify-content: center; 
+  align-items: center; */
+  transform: rotateY(0);
+}
+
+
+
+
