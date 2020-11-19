@@ -70,22 +70,60 @@ body {
 /***************************************************
 ***** SET MAIN CONTENT CONTAINER TO 1140 PX ********
 ***************************************************/
-.row {
+.row, .container {
   max-width: var(--grid-width);
   margin: 0 auto;
+  
+}
+
+.row:not(:last-child) {
+  margin-bottom: var(--gutter-vertical-small);
+}
+
+.row::after, .container::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 
 
 /***************************************************
-***** GRID *****************************************
+***** FLOAT-GRID ***********************************
 ***************************************************/
-.row .col-1-of-2{width:calc((100% - 6rem) / 2)}
-.row .col-1-of-3{width:calc((100% - 2 * 6rem) / 3)}
-.row .col-2-of-3{width:calc(2 * ((100% - 2 * 6rem) / 3) + 6rem)}
-.row .col-1-of-4{width:calc((100% - 3 * 6rem) / 4)}
-.row .col-2-of-4{width:calc(2 * ((100% - 3 * 6rem) / 4) + 6rem)}
-.row .col-3-of-4{width:calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem)}
+
+[class^="col"] {
+  float: left;
+}
+
+[class^="col"]:not(:last-child) {
+  margin-right: var(--gutter-horizontal);
+}
+
+.col-1-of-2{
+  width:calc((100% - 6rem) / 2);
+}
+
+.col-1-of-3{
+  width:calc((100% - 2 * 6rem) / 3)
+}
+
+.col-2-of-3{
+  width:calc(2 * ((100% - 2 * 6rem) / 3) + 6rem)
+}
+
+.col-1-of-4{
+  width:calc((100% - 3 * 6rem) / 4)
+}
+
+.col-2-of-4{
+  width:calc(2 * ((100% - 3 * 6rem) / 4) + 6rem)
+}
+
+.col-3-of-4{
+  width:calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem)
+}
+
 
 
 
@@ -96,6 +134,13 @@ h1, .user-guide-modal {
 h1 {
   font-size: 3rem;
 }
+
+.header-logo {
+  width: 50rem;
+  float: left;
+  margin-bottom: 1rem;
+}
+
 
 
 /***************************************************
@@ -120,9 +165,7 @@ h1 {
   width: 20px;
   height: 20px;
   color: var(--main-color);
-  z-index: 10001;
-
-  display: inline-block;
+  z-index: 10;
   position: absolute;
   right: 1.5%;
   top: 6%;
@@ -132,6 +175,13 @@ h1 {
 /***************************************************
 ***** BUTTONS **************************************
 ***************************************************/
+
+.theme-mode-button {
+  position: absolute;
+  top: 3%;
+  left: 95%;
+}
+
 .btn, .btn:link, .btn:visited {
   border-radius: .3rem;
   border: none;
